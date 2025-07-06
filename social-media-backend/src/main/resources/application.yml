@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: back_end_app
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 600253008444-mnt1m9oe8pvh2tjeev7069kfiokofbjd.apps.googleusercontent.com
+            client-secret: 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
+            redirectUri: "{baseUrl}/oauth2/callback/google"
+            scope:
+              - email
+              - profile
+          facebook:
+            client-id: 1017536287117260
+            client-secret: 12754857245dbc32155ff2a95aedabce
+            redirectUri: "{baseUrl}/oauth2/callback/facebook"
+            scope:
+              - email
+              - public_profile
+  datasource:
+    url: jdbc:mysql://localhost:3306/social_network_project
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init-mode: always
+
+security:
+  jwt:
+    access:
+      timeout: 3 #minute
+      secretKey: ZGFzZHNhZHNzYWRzZHNkc2dnaGhnZmhzZmRkZnNzZnNzZmZRRAo=
+    refresh:
+      timeout: 1 #month
+      secretKey: YXNhc2Rhc2RhZGZmamFkc2RuYWRzYW9kZGFzZHNkZ2g0MzI0MjUy
+    reset:
+      timeout: 5 #minute
+      secretKey: MTIzMjEwMTBlc3NkZmprZHNmZGZhcHAzMDIxMzEwss
+
+
