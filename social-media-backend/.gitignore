@@ -33,3 +33,7 @@ build/
 .vscode/
 
 .env
+
+# Bỏ qua file .env
+.env
+.application.yml

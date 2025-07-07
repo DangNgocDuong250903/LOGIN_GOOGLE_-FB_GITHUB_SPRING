@@ -1,24 +1,32 @@
 spring:
   application:
     name: back_end_app
+
+#${ENV_NAME}:
   security:
     oauth2:
       client:
         registration:
           google:
-            client-id: 600253008444-mnt1m9oe8pvh2tjeev7069kfiokofbjd.apps.googleusercontent.com
-            client-secret: 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
+            client-id: 804082710912-cc625cbghektau5j0ce1j38pld82f77r.apps.googleusercontent.com
+            client-secret: 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
             redirectUri: "{baseUrl}/oauth2/callback/google"
             scope:
               - email
               - profile
           facebook:
-            client-id: 1017536287117260
-            client-secret: 12754857245dbc32155ff2a95aedabce
-            redirectUri: "{baseUrl}/oauth2/callback/facebook"
+            client-id: ${FACEBOOK_CLIENT_ID}
+            client-secret: ${FACEBOOK_CLIENT_SECRET}
+            redirect-uri: "{baseUrl}/oauth2/callback/{registrationId}"
             scope:
-              - email
               - public_profile
+              - email
+        provider:
+          facebook:
+            authorization-uri: https://www.facebook.com/v17.0/dialog/oauth
+            token-uri: https://graph.facebook.com/v17.0/oauth/access_token
+            user-info-uri: https://graph.facebook.com/me?fields=id,name,email,picture
+            user-name-attribute: email
   datasource:
     url: jdbc:mysql://localhost:3306/social_network_project
     username: root
