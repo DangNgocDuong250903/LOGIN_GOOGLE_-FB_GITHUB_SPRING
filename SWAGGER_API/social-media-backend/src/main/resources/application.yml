@@ -1,0 +1,57 @@
+spring:
+  swagger-ui:
+    path: /swagger-ui.html
+  application:
+    name: back_end_app
+
+#${ENV_NAME}:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 804082710912-cc625cbghektau5j0ce1j38pld82f77r.apps.googleusercontent.com
+            client-secret: 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
+            redirectUri: "{baseUrl}/oauth2/callback/google"
+            scope:
+              - email
+              - profile
+          facebook:
+            client-id: ${FACEBOOK_CLIENT_ID}
+            client-secret: ${FACEBOOK_CLIENT_SECRET}
+            redirect-uri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - public_profile
+              - email
+        provider:
+          facebook:
+            authorization-uri: https://www.facebook.com/v17.0/dialog/oauth
+            token-uri: https://graph.facebook.com/v17.0/oauth/access_token
+            user-info-uri: https://graph.facebook.com/me?fields=id,name,email,picture
+            user-name-attribute: email
+  datasource:
+    url: jdbc:mysql://localhost:3306/social_network_project
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init-mode: always
+
+security:
+  jwt:
+    access:
+      timeout: 3 #minute
+      secretKey: ZGFzZHNhZHNzYWRzZHNkc2dnaGhnZmhzZmRkZnNzZnNzZmZRRAo=
+    refresh:
+      timeout: 1 #month
+      secretKey: YXNhc2Rhc2RhZGZmamFkc2RuYWRzYW9kZGFzZHNkZ2g0MzI0MjUy
+    reset:
+      timeout: 5 #minute
+      secretKey: MTIzMjEwMTBlc3NkZmprZHNmZGZhcHAzMDIxMzEwss
+
+
