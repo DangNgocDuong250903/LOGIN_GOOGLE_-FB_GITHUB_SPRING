@@ -8,8 +8,8 @@ spring:
       client:
         registration:
           google:
-            client-id: 804082710912-cc625cbghektau5j0ce1j38pld82f77r.apps.googleusercontent.com
-            client-secret: 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
+            client-id: -.apps.googleusercontent.com
+            client-secret: -
             redirectUri: "{baseUrl}/oauth2/callback/google"
             scope:
               - email
@@ -44,12 +44,12 @@ security:
   jwt:
     access:
       timeout: 3 #minute
-      secretKey: ZGFzZHNhZHNzYWRzZHNkc2dnaGhnZmhzZmRkZnNzZnNzZmZRRAo=
+      secretKey: =
     refresh:
       timeout: 1 #month
-      secretKey: YXNhc2Rhc2RhZGZmamFkc2RuYWRzYW9kZGFzZHNkZ2g0MzI0MjUy
+      secretKey: 
     reset:
       timeout: 5 #minute
-      secretKey: MTIzMjEwMTBlc3NkZmprZHNmZGZhcHAzMDIxMzEwss
+      secretKey: 
 
 
