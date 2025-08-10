@@ -10,8 +10,8 @@ spring:
       client:
         registration:
           google:
-            client-id: 804082710912-cc625cbghektau5j0ce1j38pld82f77r.apps.googleusercontent.com
-            client-secret: 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
+            client-id: 
+            client-secret: 
             scope: profile,email
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
           facebook:
@@ -22,8 +22,8 @@ spring:
               - public_profile
               - email
           github:
-            client-id: Ov23lifJpoOxk7lIYDwp         # từ GitHub
-            client-secret: 53f73b4efa570b4818b06c63c52763de70b88860     # từ GitHub
+            client-id:          # từ GitHub
+            client-secret:      # từ GitHub
             scope:
               - read:user
               - user:email
@@ -62,12 +62,12 @@ security:
   jwt:
     access:
       timeout: 3 #minute
-      secretKey: ZGFzZHNhZHNzYWRzZHNkc2dnaGhnZmhzZmRkZnNzZnNzZmZRRAo=
+      secretKey: =
     refresh:
       timeout: 1 #month
-      secretKey: YXNhc2Rhc2RhZGZmamFkc2RuYWRzYW9kZGFzZHNkZ2g0MzI0MjUy
+      secretKey: 
     reset:
       timeout: 5 #minute
-      secretKey: MTIzMjEwMTBlc3NkZmprZHNmZGZhcHAzMDIxMzEwss
+      secretKey: 
 
 
